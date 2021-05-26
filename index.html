@@ -5,9 +5,43 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <title>FreeBoard</title>
-        <link rel="stylesheet" href="styles.css">
+        <link rel="stylesheet" href="styles.css" />
+        <script
+            src="https://kit.fontawesome.com/3b4f251a02.js"
+            crossorigin="anonymous"
+        ></script>
     </head>
     <body>
+        <div class="toolbar">
+            <div class="pen penColor tools active">
+                <i class="fas fa-pen"></i>
+                <div class="color black"></div>
+                <div class="color lightcoral"></div>
+                <div class="color lightgreen"></div>
+                <div class="color lightblue"></div>
+                <input
+                        type="range"
+                        min="1"
+                        max="20"
+                        value="10"
+                        class="slider"
+                        id="myRange"
+                    />
+            </div>
+            <div class="eraser tools">
+                <i class="fas fa-eraser"></i>
+                <div class="slidecontainer">
+                    <input
+                        type="range"
+                        min="1"
+                        max="20"
+                        value="10"
+                        class="slider"
+                        id="myRange"
+                    />
+                </div>
+            </div>
+        </div>
         <canvas class="board"></canvas>
     </body>
     <script src="script.js"></script>

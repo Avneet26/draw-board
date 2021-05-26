@@ -3,3 +3,71 @@
     margin: 0;
     padding: 0;
 }
+body {
+    overflow: hidden;
+}
+.board {
+    cursor: crosshair;
+}
+.toolbar {
+    height: 3rem;
+    width: 50rem;
+    margin: 0 auto;
+    position: absolute;
+    border: 1px solid;
+    left: calc(100vw - 75rem);
+    z-index: 2;
+    display: flex;
+    align-items: center;
+}
+
+/* Pen css */
+.penColor {
+    font-size: 20px;
+    /* padding-top: 0.7rem;
+    padding-left: 0.7rem; */
+    /* width: 3rem; */
+    height: 90%;
+    display: flex;
+    align-items: center;
+}
+.penColor i {
+    margin: 0 8px;
+}
+.penColor .color {
+    height: 2rem;
+    width: 2rem;
+    margin-right: 5px;
+}
+.pen input{
+    width: 5rem;
+}
+.black {
+    background-color: black;
+}
+.lightcoral {
+    background-color: lightcoral;
+}
+.lightgreen {
+    background-color: lightgreen;
+}
+.lightblue {
+    background-color: lightblue;
+}
+
+/* eraser */
+.eraser {
+    display: flex;
+    align-items: center;
+    height: 90%;
+}
+.eraser i{
+    font-size: 20px;
+    margin: 0 8px;
+}
+.eraser .slider{
+    width: 5rem;
+}
+.active{
+    background-color: #ddd; 
+}

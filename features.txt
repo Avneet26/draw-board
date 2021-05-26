@@ -1,3 +1,6 @@
 1. Draw using pen
 2. Change colors of pen
 3. Change width of pen
+3. Eraser
+    - width
+    - double click to erase whole screen
