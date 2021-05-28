@@ -1,0 +1,26 @@
+.dropdownDown {
+    animation: dropdownDown 0.4s ease;
+}
+.dropdownUp {
+    animation: dropdownUp 0.4s ease;
+}
+@keyframes dropdownDown {
+    0% {
+        top: -4rem;
+        opacity: 0;
+    }
+    100% {
+        top: 0;
+        opacity: 1;
+    }
+}
+@keyframes dropdownUp {
+    0% {
+        top: 0;
+        opacity: 1;
+    }
+    100% {
+        top: -4rem;
+        opacity: 0;
+    }
+}

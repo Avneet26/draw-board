@@ -4,3 +4,4 @@
 3. Eraser
     - width
     - double click to erase whole screen
+4. Draggable Sticky notes

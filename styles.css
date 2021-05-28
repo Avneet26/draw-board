@@ -6,6 +6,9 @@
 body {
     overflow: hidden;
 }
+canvas {
+    z-index: 1;
+}
 .board {
     cursor: crosshair;
 }
@@ -19,28 +22,53 @@ body {
     z-index: 2;
     display: flex;
     align-items: center;
+    justify-content: space-around;
+    padding: 5px;
 }
 
 /* Pen css */
 .penColor {
-    font-size: 20px;
     /* padding-top: 0.7rem;
     padding-left: 0.7rem; */
     /* width: 3rem; */
     height: 90%;
     display: flex;
+    flex-direction: column;
     align-items: center;
+    position: relative;
 }
-.penColor i {
-    margin: 0 8px;
+.penColor .fa-pen {
+    font-size: 1.2rem;
 }
-.penColor .color {
+.fa-chevron-down {
+    cursor: pointer;
+}
+.penIcons {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 5px;
+    height: 100%;
+    width: 3.5rem;
+}
+.pen-color-cont .color {
     height: 2rem;
     width: 2rem;
     margin-right: 5px;
 }
-.pen input{
-    width: 5rem;
+.pen-dropdown {
+    border: 1px solid #aaa;
+    border-radius: 5px;
+    padding: 10px;
+    margin-top: 3rem;
+    position: absolute;
+}
+.pen-color-cont {
+    display: flex;
+    margin-bottom: 1rem;
+}
+.pen input {
+    width: 100%;
 }
 .black {
     background-color: black;
@@ -61,13 +89,54 @@ body {
     align-items: center;
     height: 90%;
 }
-.eraser i{
+.eraser i {
     font-size: 20px;
     margin: 0 8px;
 }
-.eraser .slider{
+.eraser .slider {
     width: 5rem;
 }
-.active{
-    background-color: #ddd; 
+.active {
+    background-color: #ddd;
+}
+
+/* Sticky */
+.sticky-board {
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    /* background-color: antiquewhite; */
+    z-index: -2;
+}
+.sticky-icon {
+    height: 90%;
+    display: flex;
+    align-items: center;
+}
+.sticky-icon i {
+    font-size: 20px;
+    margin: 0 8px;
+}
+.sticky-note {
+    height: 15rem;
+    width: 14rem;
+    border: 1px solid;
+    position: absolute;
+    top: calc(50vh - (15rem / 2));
+    left: calc(50vw - 14rem / 2);
+}
+.sticky-header {
+    border-bottom: 1px solid;
+    height: 1.5rem;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    padding-right: 5px;
+}
+.sticky-header .fas {
+    margin-left: 7px;
+}
+.sticky-body {
+    height: calc(100% - 1.5rem);
+    background-color: antiquewhite;
 }

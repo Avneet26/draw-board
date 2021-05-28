@@ -4,11 +4,14 @@ let colors = document.querySelectorAll(".penColor .color");
 let penWidthInp = document.querySelector(".pen input");
 let ersIcon = document.querySelector(".eraser i");
 let ersWidthInp = document.querySelector(".eraser input");
+let penDropdown = document.querySelector(".pen-dropdown");
+let penSetBtn = document.querySelector(".penIcons .fa-chevron-down");
 
 let toolInHand = "pen";
 let penColor = "";
 let eraserWidth = 10;
 let penWidth = 10;
+let penDrop = false;
 
 let canvas = document.querySelector(".board");
 let tool = canvas.getContext("2d");
@@ -42,14 +45,14 @@ canvas.addEventListener("mousedown", function (e) {
 });
 canvas.addEventListener("mousemove", function (e) {
     if (isDown) {
-        if ((toolInHand == "pen")) {
+        if (toolInHand == "pen") {
             tool.lineWidth = penWidth;
-            tool.globalCompositeOperation="source-over";
+            tool.globalCompositeOperation = "source-over";
             tool.lineTo(e.clientX, e.clientY);
             tool.stroke();
-        }else{
+        } else {
             tool.lineWidth = eraserWidth;
-            tool.globalCompositeOperation="destination-out";
+            tool.globalCompositeOperation = "destination-out";
             tool.lineTo(e.clientX, e.clientY);
             tool.stroke();
         }
@@ -67,14 +70,34 @@ for (let i = 0; i < colors.length; i++) {
         penIcon.style.color = color;
     });
 }
-penWidthInp.addEventListener("input",function(){
+penWidthInp.addEventListener("input", function () {
     penWidth = penWidthInp.value;
-})
+});
+
+penSetBtn.addEventListener("click", function () {
+    if (penDrop == false) {
+        penDrop = true;
+        penDropdown.style.display = "block";
+        penDropdown.classList.add("dropdownDown");
+        penDropdown.classList.remove("dropdownUp");
+    } else {
+        penDrop = false;
+        penDropdown.style.display = "none";
+        penDropdown.classList.add("dropdownUp");
+        penDropdown.classList.remove("dropdownDown");
+    }
+});
+
+if (penDrop == false) {
+    penDropdown.style.display = "none";
+} else {
+    penDropdown.style.display = "block";
+}
 
 //Eraser implementation
-ersWidthInp.addEventListener("input",function(){
+ersWidthInp.addEventListener("input", function () {
     eraserWidth = ersWidthInp.value;
-})
-ersIcon.addEventListener("dblclick",function(){
-    tool.clearRect(0,0,canvas.width,canvas.height);
-})
+});
+ersIcon.addEventListener("dblclick", function () {
+    tool.clearRect(0, 0, canvas.width, canvas.height);
+});
