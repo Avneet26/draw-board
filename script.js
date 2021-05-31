@@ -6,12 +6,15 @@ let ersIcon = document.querySelector(".eraser i");
 let ersWidthInp = document.querySelector(".eraser input");
 let penDropdown = document.querySelector(".pen-dropdown");
 let penSetBtn = document.querySelector(".penIcons .fa-chevron-down");
+let ersDropdown = document.querySelector(".ers-dropdown");
+let ersSetBtn = document.querySelector(".ersIcons .fa-chevron-down");
 
 let toolInHand = "pen";
 let penColor = "";
 let eraserWidth = 10;
 let penWidth = 10;
 let penDrop = false;
+let ersDrop = false;
 
 let canvas = document.querySelector(".board");
 let tool = canvas.getContext("2d");
@@ -101,3 +104,23 @@ ersWidthInp.addEventListener("input", function () {
 ersIcon.addEventListener("dblclick", function () {
     tool.clearRect(0, 0, canvas.width, canvas.height);
 });
+
+ersSetBtn.addEventListener("click", function () {
+    if (ersDrop == false) {
+        ersDrop = true;
+        ersDropdown.style.display = "block";
+        ersDropdown.classList.add("dropdownDown");
+        ersDropdown.classList.remove("dropdownUp");
+    } else {
+        ersDrop = false;
+        ersDropdown.style.display = "none";
+        ersDropdown.classList.add("dropdownUp");
+        ersDropdown.classList.remove("dropdownDown");
+    }
+});
+
+if (ersDrop == false) {
+    ersDropdown.style.display = "none";
+} else {
+    ersDropdown.style.display = "block";
+}

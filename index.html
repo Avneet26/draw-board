@@ -11,6 +11,11 @@
             src="https://kit.fontawesome.com/3b4f251a02.js"
             crossorigin="anonymous"
         ></script>
+        <link rel="preconnect" href="https://fonts.gstatic.com" />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Roboto&display=swap"
+            rel="stylesheet"
+        />
     </head>
     <body>
         <div class="toolbar">
@@ -19,7 +24,7 @@
                     <i class="fas fa-pen"></i>
                     <i class="fas fa-chevron-down"></i>
                 </div>
-                <div class="pen-dropdown">
+                <div class="dropdown pen-dropdown">
                     <div class="pen-color-cont">
                         <div class="color black"></div>
                         <div class="color lightcoral"></div>
@@ -39,24 +44,42 @@
                 </div>
             </div>
             <div class="eraser tools">
-                <i class="fas fa-eraser"></i>
-                <div class="slidecontainer">
-                    <input
-                        type="range"
-                        min="1"
-                        max="20"
-                        value="10"
-                        class="slider"
-                        id="myRange"
-                    />
+                <div class="ersIcons">
+                    <i class="fas fa-eraser"></i>
+                    <i class="fas fa-chevron-down"></i>
+                </div>
+
+                <div class="ers-dropdown dropdown">
+                    <div class="slidecontainer">
+                        <input
+                            type="range"
+                            min="1"
+                            max="20"
+                            value="10"
+                            class="slider"
+                            id="myRange"
+                        />
+                    </div>
                 </div>
             </div>
             <div class="sticky-icon">
                 <i class="far fa-sticky-note"></i>
             </div>
+            <div class="image-upload">
+                <label for="imgUp">
+                    <i class="far fa-image"></i>
+                    <input
+                        type="file"
+                        name="Img"
+                        id="imgUp"
+                        style="display: none"
+                    />
+                </label>
+            </div>
         </div>
         <canvas class="board"></canvas>
     </body>
     <script src="script.js"></script>
+    <script src="image.js"></script>
     <script src="sticky.js"></script>
 </html>

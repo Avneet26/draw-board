@@ -2,6 +2,7 @@
     box-sizing: border-box;
     margin: 0;
     padding: 0;
+    font-family: "Roboto", sans-serif;
 }
 body {
     overflow: hidden;
@@ -56,7 +57,7 @@ canvas {
     width: 2rem;
     margin-right: 5px;
 }
-.pen-dropdown {
+.dropdown {
     border: 1px solid #aaa;
     border-radius: 5px;
     padding: 10px;
@@ -85,13 +86,11 @@ canvas {
 
 /* eraser */
 .eraser {
-    display: flex;
-    align-items: center;
     height: 90%;
-}
-.eraser i {
-    font-size: 20px;
-    margin: 0 8px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
 }
 .eraser .slider {
     width: 5rem;
@@ -99,7 +98,17 @@ canvas {
 .active {
     background-color: #ddd;
 }
-
+.ersIcons {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 5px;
+    height: 100%;
+    width: 3.5rem;
+}
+.ersIcons .fa-eraser {
+    font-size: 20px;
+}
 /* Sticky */
 .sticky-board {
     height: 100%;
@@ -120,23 +129,36 @@ canvas {
 .sticky-note {
     height: 15rem;
     width: 14rem;
-    border: 1px solid;
+
     position: absolute;
     top: calc(50vh - (15rem / 2));
     left: calc(50vw - 14rem / 2);
 }
 .sticky-header {
-    border-bottom: 1px solid;
+    border: 1px solid;
     height: 1.5rem;
     display: flex;
     justify-content: flex-end;
     align-items: center;
     padding-right: 5px;
+    background-color: white;
 }
 .sticky-header .fas {
     margin-left: 7px;
 }
 .sticky-body {
     height: calc(100% - 1.5rem);
-    background-color: antiquewhite;
+    background-color: rgba(246, 255, 126, 0.568);
+    padding: 10px;
+}
+.sticky-body {
+    outline: none;
+}
+.sticky-minimize {
+    display: none;
+}
+
+/* Image Icon */
+.image-upload i {
+    font-size: 20px;
 }
